@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demonstration of Date Object</title>
+</head>
+<body>
+    <script>
+        // Create a new Date object for the current date and time
+        const currentDate = new Date();
+        console.log("Current Date and Time: " + currentDate);
+
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth() + 1; // Months are zero-indexed
+        const date = currentDate.getDate();
+        const day = currentDate.getDay(); // 0 (Sunday) to 6 (Saturday)
+        const hours = currentDate.getHours();
+        const minutes = currentDate.getMinutes();
+        const seconds = currentDate.getSeconds();
+
+        // Convert day index to string
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const dayName = daysOfWeek[day];
+
+        // Display individual components
+        console.log("Year: " + year);
+        console.log("Month: " + month);
+        console.log("Date: " + date);
+        console.log("Day: " + dayName);
+        console.log("Time: " + hours + ":" + minutes + ":" + seconds);
+
+        // Create another date object (e.g., a specific birthday)
+        const birthday = new Date("2000-05-15");
+        console.log("Birthday: " + birthday.toDateString());
+
+        // Compare dates
+        if (currentDate > birthday) {
+            console.log("You were born before today.");
+        } else {
+            console.log("You will be born in the future (time traveler?)");
+        }
+    </script>
+</body>
+</html>
